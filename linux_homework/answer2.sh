@@ -1,0 +1,1 @@
+awk '{print $7}' access.log |sort |uniq -c |sort -nr |head -n 1|awk '{print "Most visited URL: " $2 "\n" "Visited count: " $1}'

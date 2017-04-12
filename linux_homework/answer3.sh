@@ -1,0 +1,1 @@
+cat all_exception_20130816|sed 's/\\n/__tmp__/g'|awk -F '__tmp__' '{for(i=2;i<NF;i++){print $i;if(i==NF-1){print '\n';print '\n'}}}' |sed 's/AttributeError:.*$/AttributeError/g' |sed -n 'p;/AttributeError/n' >all_exception_result.txt
